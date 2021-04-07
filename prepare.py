@@ -13,9 +13,7 @@ If the problem does not exist or the file already exists,
 no change will be made.
 """
 
-
 import os.path, sys, requests
-
 
 AUTHOR = 'Jorge Espinoza'
 GITHUB = 'https://github.com/espinoza/project-euler'
@@ -63,7 +61,7 @@ def get_problem_title(html: str) -> str:
 def create_file(problem_number: int, problem_title: str, root_url: str):
     """Create p???.py file with its own header.
     """
-    file_title = 'solutions/p' + str(problem_number).zfill(3) + '.py'
+    file_title = 'solutions/pe' + str(problem_number).zfill(3) + '.py'
 
     # Check if the file exists
     if os.path.isfile(file_title):
@@ -84,7 +82,6 @@ def create_header(problem_number: int, problem_title: str,
                   root_url: str) -> str:
     """Return a string whith header of py file.
     """
-    n = str(problem_number)
     global AUTHOR
     global GITHUB
 
@@ -108,4 +105,3 @@ if __name__ == '__main__':
     else:
         n = sys.argv[1]
         main(n)
-
